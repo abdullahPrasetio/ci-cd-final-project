@@ -18,14 +18,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip wheel setuptools
+          # nose 1.3.7 needs pkg_resources, removed in setuptools >= 81
+          python -m pip install --upgrade pip wheel "setuptools<81"
           pip install -r requirements.txt
 
       - name: Lint with flake8
         run: |
           # Stop the build if there are Python syntax errors or undefined names
           flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Exit-zero treats all errors as warnings; enforce style limits
+          # Enforce style limits: max complexity and max line length
           flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run unit tests with nose
