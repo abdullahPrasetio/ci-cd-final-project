@@ -1,6 +1,15 @@
-# CI/CD Tools and Practices Final Project Template
+# CI/CD Tools and Practices Final Project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+**ci-cd-final-project**
+
+Hit Counter Service berbasis Python 3.9 / Flask dengan pipeline CI
+(GitHub Actions) dan CD (Tekton Tasks + OpenShift Pipelines).
+
+## Tasks
+
+- `.github/workflows/workflow.yml` — CI: **lint dengan flake8** dan **unit test
+  dengan nose**.
+- `.tekton/tasks.yml` — Tekton Task **cleanup** dan **nose**.
 
 ## Usage
 
@@ -23,9 +32,6 @@ Then you must exit the shell and start a new one for the Python virtual environm
 ```bash
 exit
 ```
-
-## Tasks
-
 
 ## License
 
